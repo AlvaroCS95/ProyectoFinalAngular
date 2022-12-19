@@ -7,7 +7,8 @@ import { MatTableModule } from '@angular/material/table';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
- 
+import { CurrencyMaskModule } from 'ng2-currency-mask';
+
 @NgModule({
   exports: [
     MatToolbarModule,
@@ -18,6 +19,7 @@ import { MatInputModule } from '@angular/material/input';
     MatButtonModule,
     MatFormFieldModule,
     MatInputModule,
+    CurrencyMaskModule,
   ],
 })
 export class MaterialModule {}

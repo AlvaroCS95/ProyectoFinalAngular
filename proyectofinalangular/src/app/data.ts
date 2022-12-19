@@ -1,10 +1,10 @@
-import { Gasto } from "./Modelos/gasto"
+import Gasto from './Modelos/gasto';
 
 export let datos: Gasto[] = [
-    {
-      _id: 1,
-      nombre: "pais",
-      categoria: "impuesto",
-      monto: 5000
-    }
-]
+  {
+    id: 1,
+    nombre: 'pais',
+    categoria: 'impuesto',
+    monto: 5000,
+  },
+];
