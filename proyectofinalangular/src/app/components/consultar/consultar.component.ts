@@ -18,7 +18,7 @@ export class ConsultarComponent {
   ngOnInit(): void {
     this.get_gastos();
   }
-
+  //test
   get_gastos() {
     this.daService.get_gastos().subscribe((all_gastos) => {
       this.all_gastos = all_gastos;
