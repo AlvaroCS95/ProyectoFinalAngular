@@ -35,7 +35,7 @@
         <button
           mat-flat-button
           color="accent"
-          (click)="search_gasto(gasto.id); editionMode = !editionMode"
+          routerLink="/editar/{{ gasto.id }}"
         >
           Editar
         </button>

@@ -18,13 +18,14 @@ export class DAService {
   get_gastos(): Observable<Gasto[]> {
     return this.http.get<Gasto[]>(this.api_url);
   }
-  // add_gasto(gasto: Gasto) {
-  //   gasto._id = new Date(Date.now()).getTime();
-  //   console.log('gasto__', gasto);
-  //   datos.concat(gasto);
-  // }
 
   add_gasto(gasto: Gasto): Observable<Gasto> {
     return this.http.post<Gasto>(this.api_url, gasto, httpOptions);
   }
+
+  get_gasto(id_gasto: number): Observable<Gasto> {
+    const url = `${this.api_url}/${id_gasto}`;
+    return this.http.get<Gasto>(url);
+  }
+
 }

@@ -1,0 +1,72 @@
+<div [ngStyle]="{ 'margin-top': '30px' }">
+    <!-- New contact form -->
+    <h2 [ngStyle]="{ 'margin-left': '20%' }">
+      Editar Gasto
+    </h2>
+    <form
+      class="form-container"
+      id="editGastoForm"
+      [ngStyle]="{ 'margin-left': '20%' }"
+      (ngSubmit)="
+        editGasto(gasto);
+        gasto.nombre = '';
+        gasto.categoria = '';
+        gasto.monto = 0;
+        gasto.id = undefined
+      "
+      #newGastoForm="ngForm"
+    >
+      <mat-form-field>
+        <mat-label>Nombre</mat-label>
+        <input
+          matInput
+          #nombre="ngModel"
+          name="Nombre"
+          [(ngModel)]="gasto.nombre"
+          placeholder="Nombre"
+          required
+        />
+      </mat-form-field>
+  
+      <mat-form-field>
+        <mat-label>Categoria</mat-label>
+        <input
+          matInput
+          #categoria="ngModel"
+          name="Categoria"
+          [(ngModel)]="gasto.categoria"
+          placeholder="Categoría"
+          required
+        />
+      </mat-form-field>
+  
+      <mat-form-field>
+        <mat-label>Monto</mat-label>
+        <input
+          currencyMask
+          placeholder="0"
+          matInput
+          value=""
+          #monto="ngModel"
+          name="Monto"
+          [(ngModel)]="gasto.monto"
+          required
+        />
+      </mat-form-field>
+  
+      <button
+        matInput
+        mat-flat-button
+        [ngStyle]="{
+          'margin-top': '-18px',
+          'margin-left': '10px',
+          padding: '28px'
+        }"
+        color="accent"
+        type="submit"
+      >
+        Agregar
+      </button>
+    </form>
+  </div>
+  
