@@ -1,39 +1,72 @@
 <div [ngStyle]="{ 'margin-top': '30px' }">
-    <!-- New contact form -->
-    <h2 [ngStyle]="{ 'margin-left': '20%' }" *ngIf="!editionMode">Agregar Gasto</h2>
-    <form class="form-container" id="addContactForm" *ngIf="!editionMode" [ngStyle]="{ 'margin-left': '20%' }"
-        (ngSubmit)="
+  <!-- New contact form -->
+  <h2 [ngStyle]="{ 'margin-left': '20%' }" *ngIf="!editionMode">
+    Agregar Gasto
+  </h2>
+  <form
+    class="form-container"
+    id="addContactForm"
+    *ngIf="!editionMode"
+    [ngStyle]="{ 'margin-left': '20%' }"
+    (ngSubmit)="
       add_gasto(editableGasto);
       editableGasto.nombre = '';
       editableGasto.categoria = '';
       editableGasto.monto = 0;
-      editableGasto._id = undefined
-    " #newGastoForm="ngForm">
-        <mat-form-field>
-            <mat-label>Nombre</mat-label>
-            <input matInput #firstName="ngModel" name="Nombre" [(ngModel)]="editableGasto.nombre"
-                placeholder="First Name" required />
-        </mat-form-field>
- 
-        <mat-form-field>
-            <mat-label>Categoria</mat-label>
-            <input matInput #lastName="ngModel" name="Categoria" [(ngModel)]="editableGasto.categoria"
-                placeholder="Last Name" required />
-        </mat-form-field>
- 
-        <mat-form-field>
-            <mat-label>Monto</mat-label>
-            <input matInput #email="ngModel" name="Monto" [(ngModel)]="editableGasto.monto"
-                required />
-        </mat-form-field>
- 
-        <button matInput mat-flat-button [ngStyle]="{
+      editableGasto.id = undefined
+    "
+    #newGastoForm="ngForm"
+  >
+    <mat-form-field>
+      <mat-label>Nombre</mat-label>
+      <input
+        matInput
+        #nombre="ngModel"
+        name="Nombre"
+        [(ngModel)]="editableGasto.nombre"
+        placeholder="Nombre"
+        required
+      />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Categoria</mat-label>
+      <input
+        matInput
+        #categoria="ngModel"
+        name="Categoria"
+        [(ngModel)]="editableGasto.categoria"
+        placeholder="Categoría"
+        required
+      />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Monto</mat-label>
+      <input
+        currencyMask
+        placeholder="0"
+        matInput
+        value=""
+        #monto="ngModel"
+        name="Monto"
+        [(ngModel)]="editableGasto.monto"
+        required
+      />
+    </mat-form-field>
+
+    <button
+      matInput
+      mat-flat-button
+      [ngStyle]="{
         'margin-top': '-18px',
         'margin-left': '10px',
         padding: '28px'
-      }" color="accent" type="submit">
-            Agregar
-        </button>
-    </form>
- 
+      }"
+      color="accent"
+      type="submit"
+    >
+      Agregar
+    </button>
+  </form>
 </div>

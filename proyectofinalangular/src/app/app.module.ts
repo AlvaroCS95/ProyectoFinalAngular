@@ -7,20 +7,21 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AgregarComponent } from './components/agregar/agregar.component';
 import { FormsModule } from '@angular/forms';
 import { MaterialModule } from './material.module';
+import { ConsultarComponent } from './components/consultar/consultar.component';
+
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    AgregarComponent
-  ],
+  declarations: [AppComponent, AgregarComponent, ConsultarComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,
-    MaterialModule
+    MaterialModule,
+    HttpClientModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

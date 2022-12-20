@@ -1,0 +1,52 @@
+{
+  "listaDeGastos": [
+    {
+      "nombre": "pais",
+      "categoria": "impuesto",
+      "monto": 5000,
+      "id": 1
+    },
+    {
+      "nombre": "paisw",
+      "categoria": "impuestow",
+      "monto": 5000,
+      "id": 2
+    },
+    {
+      "nombre": "Test",
+      "categoria": "asdfas",
+      "monto": 5000,
+      "id": 3
+    },
+    {
+      "nombre": "NUevo",
+      "categoria": "alimentación",
+      "monto": 8555,
+      "id": 4
+    },
+    {
+      "nombre": "asdfas",
+      "categoria": "asdfasf",
+      "monto": 90,
+      "id": 5
+    },
+    {
+      "nombre": "sgfsdg",
+      "categoria": "sfgsdg",
+      "monto": 45,
+      "id": 6
+    },
+    {
+      "nombre": "Cantones",
+      "categoria": "Alimentación",
+      "monto": 125,
+      "id": 7
+    },
+    {
+      "nombre": "trea",
+      "categoria": "safdvgsd",
+      "monto": 500,
+      "id": 8
+    }
+  ]
+}
