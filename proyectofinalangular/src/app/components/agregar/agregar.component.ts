@@ -11,7 +11,7 @@ import { DAService } from 'src/app/services/da.service';
 export class AgregarComponent implements OnInit {
   gastos!: Gasto[];
 
-  displayedColumns: string[] = ['Nombre', 'Categoria', 'Monto', '_id'];
+  displayedColumns: string[] = ['Nombre', 'Categoria', 'Monto', 'id'];
 
   editableGasto: Gasto = {
     nombre: '',
@@ -40,31 +40,7 @@ export class AgregarComponent implements OnInit {
       this.gastos.push(newGastoForm);
     });
     this.actulizarLista.emit();
+    window.location.href = "/"; 
   }
 
-  // search_contact(id: string) {
-  //   this.daService.get_contact_by_id(id).subscribe((contact) => {
-  //     this.editableContact = contact;
-  //   });
-  // }
-
-  // delete_contact(contact: Contact) {
-  //   this.daService.delete_contact(contact).subscribe(() => {
-  //     this.contacts = this.contacts.filter((c) => c._id !== contact._id);
-  //   });
-  // }
-
-  // update_contact(contact: Contact) {
-  //   this.daService.update_contact(contact).subscribe(() => {
-  //     this.get_contacts();
-  //   });
-  // }
-
-  // add_contact(contact: Contact): void {
-  //   if (!contact.first_name || !contact.last_name || !contact.email) return;
-
-  //   this.daService.add_contact(contact).subscribe((new_contact) => {
-  //     this.contacts.push(new_contact);
-  //   });
-  // }
 }

@@ -28,4 +28,17 @@ export class DAService {
     return this.http.get<Gasto>(url);
   }
 
+  editGasto(gasto: Gasto): Observable<Gasto> {
+    const url = `${this.api_url}/${gasto.id}`;
+    return this.http.put<Gasto>(url, gasto, httpOptions);
+
+  }
+
+  delete_gasto(gasto: Gasto): Observable<Gasto> {
+
+    const url = `${this.api_url}/${gasto.id}`;
+    return this.http.delete<Gasto>(url);
+
+  }
+
 }

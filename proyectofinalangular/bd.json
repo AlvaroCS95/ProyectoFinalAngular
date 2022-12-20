@@ -7,46 +7,22 @@
       "id": 1
     },
     {
-      "nombre": "paisw",
-      "categoria": "impuestow",
-      "monto": 5000,
+      "nombre": "asade",
+      "categoria": "adsa",
+      "monto": 10,
       "id": 2
     },
     {
-      "nombre": "Test",
-      "categoria": "asdfas",
-      "monto": 5000,
+      "nombre": "asd",
+      "categoria": "afa",
+      "monto": 10,
       "id": 3
     },
     {
-      "nombre": "NUevo",
-      "categoria": "alimentación",
-      "monto": 8555,
+      "nombre": "asd",
+      "categoria": "fas",
+      "monto": 300,
       "id": 4
-    },
-    {
-      "nombre": "asdfas",
-      "categoria": "asdfasf",
-      "monto": 90,
-      "id": 5
-    },
-    {
-      "nombre": "sgfsdg",
-      "categoria": "sfgsdg",
-      "monto": 45,
-      "id": 6
-    },
-    {
-      "nombre": "Cantones",
-      "categoria": "Alimentación",
-      "monto": 125,
-      "id": 7
-    },
-    {
-      "nombre": "trea",
-      "categoria": "safdvgsd",
-      "monto": 500,
-      "id": 8
     }
   ]
 }

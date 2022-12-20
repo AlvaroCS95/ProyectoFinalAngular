@@ -1,72 +1,57 @@
-<div [ngStyle]="{ 'margin-top': '30px' }">
-    <!-- New contact form -->
-    <h2 [ngStyle]="{ 'margin-left': '20%' }">
-      Editar Gasto
-    </h2>
-    <form
-      class="form-container"
-      id="editGastoForm"
-      [ngStyle]="{ 'margin-left': '20%' }"
-      (ngSubmit)="
-        editGasto(gasto);
-        gasto.nombre = '';
-        gasto.categoria = '';
-        gasto.monto = 0;
-        gasto.id = undefined
-      "
-      #newGastoForm="ngForm"
-    >
-      <mat-form-field>
-        <mat-label>Nombre</mat-label>
-        <input
-          matInput
-          #nombre="ngModel"
-          name="Nombre"
-          [(ngModel)]="gasto.nombre"
-          placeholder="Nombre"
-          required
-        />
-      </mat-form-field>
-  
-      <mat-form-field>
-        <mat-label>Categoria</mat-label>
-        <input
-          matInput
-          #categoria="ngModel"
-          name="Categoria"
-          [(ngModel)]="gasto.categoria"
-          placeholder="Categoría"
-          required
-        />
-      </mat-form-field>
-  
-      <mat-form-field>
-        <mat-label>Monto</mat-label>
-        <input
-          currencyMask
-          placeholder="0"
-          matInput
-          value=""
-          #monto="ngModel"
-          name="Monto"
-          [(ngModel)]="gasto.monto"
-          required
-        />
-      </mat-form-field>
-  
-      <button
-        matInput
-        mat-flat-button
-        [ngStyle]="{
-          'margin-top': '-18px',
-          'margin-left': '10px',
-          padding: '28px'
-        }"
-        color="accent"
-        type="submit"
-      >
-        Agregar
-      </button>
-    </form>
-  </div>
-  
+
+ <h2 [ngStyle]="{ 'margin-left': '20%' }" *ngIf="editionMode">Editar Gasto</h2>
+ <form class="form-container" [ngStyle]="{ 'margin-left': '20%' }" *ngIf="editionMode" (ngSubmit)="
+ editGasto(editableGasto);
+   editableGasto.nombre= '';
+   editableGasto.categoria = '';
+   editableGasto.monto = 0;
+   editableGasto.id = undefined;
+   editionMode = !editionMode
+ " #editableGastoForm="ngForm">
+
+     <mat-form-field class="wide-input">
+
+         <mat-label>Nombre</mat-label>
+         <input matInput #firstName="ngModel" name="nombre" [(ngModel)]="editableGasto.nombre"
+             placeholder="Nombre" required />
+
+     </mat-form-field>
+     <mat-form-field class="wide-input">
+
+         <mat-label>Categoria</mat-label>
+
+         <input matInput #lastName="ngModel" name="categoria" [(ngModel)]="editableGasto.categoria"
+           placeholder="Categoria" required />
+     </mat-form-field>
+     <mat-form-field class="wide-input">
+         <mat-label>Monto</mat-label>
+         <input matInput #email="ngModel" name="monto" [(ngModel)]="editableGasto.monto" placeholder="Monto"
+             required />
+     </mat-form-field>
+     <div class="button-row">
+         <button mat-flat-button color="accent" 
+         [disabled]="!editableGastoForm.form.valid" [ngStyle]="{
+       'margin-top': '20px',
+       'margin-left': '10px',
+       padding: '28px'
+     }" type="submit">
+             Guardar
+         </button>
+         &nbsp;
+         <button mat-flat-button color="warn" [ngStyle]="{
+       'margin-top': '20px',
+       'margin-left': '10px',
+       padding: '28px'
+     }" 
+     routerLink="/"
+     (click)="
+       editableGasto.nombre = '';
+       editableGasto.categoria= '';
+       editableGasto.monto = 0;
+       editableGasto.id = undefined;
+       editionMode = !editionMode
+     ">
+             Cancelar
+         </button>
+     </div>
+ </form>

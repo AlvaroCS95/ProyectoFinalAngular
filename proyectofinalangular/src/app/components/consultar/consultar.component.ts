@@ -32,10 +32,9 @@ export class ConsultarComponent {
     });*/
   }
 
-  delete_gasto(contact: Gasto) {
-    console.log('Eliminando...', contact);
-    /* this.contactService.delete_contact(contact).subscribe(() => {
-      this.contacts = this.contacts.filter((c) => c._id !== contact._id);
-    });*/
+  delete_gasto(gasto: Gasto) {
+     this.daService.delete_gasto(gasto).subscribe(() => {
+      this.all_gastos = this.all_gastos.filter((c) => c.id !== gasto.id);
+    });
   }
 }
