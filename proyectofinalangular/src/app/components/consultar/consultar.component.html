@@ -1,0 +1,53 @@
+<div class="container">
+  <app-agregar (actulizarLista)="get_gastos()"></app-agregar>
+</div>
+<div [ngStyle]="{ 'margin-top': '30px' }">
+  <!-- Gastos table -->
+  <table mat-table [dataSource]="all_gastos" *ngIf="!editionMode">
+    <!-- FirstName Column -->
+    <ng-container matColumnDef="nombre">
+      <mat-header-cell *matHeaderCellDef>Nombre</mat-header-cell>
+      <mat-cell *matCellDef="let gasto">
+        {{ gasto.nombre | titlecase }}
+      </mat-cell>
+    </ng-container>
+
+    <!-- LastName Column -->
+    <ng-container matColumnDef="categoria">
+      <mat-header-cell *matHeaderCellDef>Catagoría</mat-header-cell>
+      <mat-cell *matCellDef="let gasto">
+        {{ gasto.categoria | titlecase }}
+      </mat-cell>
+    </ng-container>
+
+    <!-- Email Column -->
+    <ng-container matColumnDef="monto">
+      <mat-header-cell *matHeaderCellDef>Monto</mat-header-cell>
+      <mat-cell *matCellDef="let gasto">
+        {{ gasto.monto | currency }}
+      </mat-cell>
+    </ng-container>
+
+    <!-- Buttons Column -->
+    <ng-container matColumnDef="id">
+      <mat-header-cell *matHeaderCellDef>Action Buttons</mat-header-cell>
+      <mat-cell *matCellDef="let gasto">
+        <button
+          mat-flat-button
+          color="accent"
+          routerLink="/editar/{{ gasto.id }}"
+        >
+          Editar
+        </button>
+        &nbsp;
+        <button mat-flat-button color="warn" (click)="delete_gasto(gasto)">
+          Eliminar
+        </button>
+      </mat-cell>
+    </ng-container>
+
+    <!-- Table settings -->
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+  </table>
+</div>
