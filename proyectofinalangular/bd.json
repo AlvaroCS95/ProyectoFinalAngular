@@ -23,6 +23,12 @@
       "categoria": "fas",
       "monto": 300,
       "id": 4
+    },
+    {
+      "nombre": "test",
+      "categoria": "asdfas",
+      "monto": 580,
+      "id": 5
     }
   ]
 }
