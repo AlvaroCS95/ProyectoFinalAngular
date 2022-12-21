@@ -1,28 +1,10 @@
 {
   "listaDeGastos": [
     {
-      "nombre": "pais",
-      "categoria": "impuesto",
-      "monto": 5000,
+      "nombre": "asda",
+      "categoria": "asda",
+      "monto": "4404",
       "id": 1
-    },
-    {
-      "nombre": "asade",
-      "categoria": "adsa",
-      "monto": 10,
-      "id": 2
-    },
-    {
-      "nombre": "asd",
-      "categoria": "afa",
-      "monto": 10,
-      "id": 3
-    },
-    {
-      "nombre": "asd",
-      "categoria": "fas",
-      "monto": 300,
-      "id": 4
     }
   ]
 }
