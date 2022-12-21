@@ -37,10 +37,10 @@ export class AgregarComponent implements OnInit {
       return;
 
     this.daService.add_gasto(newGastoForm).subscribe(() => {
-      this.gastos.push(newGastoForm);
+      //this.gastos.push(newGastoForm);
+      this.actulizarLista.emit();
     });
-    this.actulizarLista.emit();
-    window.location.href = "/"; 
-  }
 
+    //window.location.href = "/";
+  }
 }
