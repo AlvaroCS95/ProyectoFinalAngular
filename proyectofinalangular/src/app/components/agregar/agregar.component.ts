@@ -2,6 +2,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Gasto } from 'src/app/Modelos/gasto';
 
 import { DAService } from 'src/app/services/da.service';
+import { GastosFirebaseService } from 'src/app/services/gastos-firebase.service';
 
 @Component({
   selector: 'app-agregar',
@@ -17,13 +18,16 @@ export class AgregarComponent implements OnInit {
     nombre: '',
     categoria: '',
     monto: 0,
-    id: undefined,
+    id: '',
   };
   editionMode = false;
 
   @Output() actulizarLista = new EventEmitter();
 
-  constructor(private daService: DAService) {}
+  constructor(
+    private daService: DAService,
+    private gastosFireBaseService: GastosFirebaseService
+  ) {}
 
   ngOnInit(): void {
     this.get_gastos();
@@ -36,11 +40,21 @@ export class AgregarComponent implements OnInit {
     if (!newGastoForm.categoria || !newGastoForm.nombre || !newGastoForm.monto)
       return;
 
+    this.gastosFireBaseService
+      .add_gasto(newGastoForm)
+      .then((gasto) => {
+        console.log(`submitted: ${JSON.stringify(gasto)}`);
+        /*  this.router.navigate([`/articulo/${articulo.id}`]);*/
+        this.actulizarLista.emit();
+      })
+      .catch((error) => console.error(error));
+
+    /*
     this.daService.add_gasto(newGastoForm).subscribe(() => {
       //this.gastos.push(newGastoForm);
       this.actulizarLista.emit();
     });
-
+*/
     //window.location.href = "/";
   }
 }

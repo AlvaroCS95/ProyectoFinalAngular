@@ -1,5 +1,5 @@
 export interface Gasto {
-  id?: number;
+  id?: string;
   nombre: string;
   categoria: string;
   monto: number;
