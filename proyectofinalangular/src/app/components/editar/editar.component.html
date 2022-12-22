@@ -4,7 +4,6 @@
  editGasto(editableGasto);
    editableGasto.nombre= '';
    editableGasto.categoria = '';
-   editableGasto.monto = 0;
    editableGasto.id = undefined;
    editionMode = !editionMode
  " #editableGastoForm="ngForm">
@@ -25,7 +24,7 @@
      </mat-form-field>
      <mat-form-field class="wide-input">
          <mat-label>Monto</mat-label>
-         <input matInput #email="ngModel" name="monto" [(ngModel)]="editableGasto.monto" placeholder="Monto"
+         <input matInput #email="ngModel" name="monto" [(ngModel)]="editableGasto.monto"
              required />
      </mat-form-field>
      <div class="button-row">

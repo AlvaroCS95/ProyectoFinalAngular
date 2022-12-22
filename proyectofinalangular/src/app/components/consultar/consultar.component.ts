@@ -11,6 +11,11 @@ export class ConsultarComponent {
   all_gastos: Gasto[] = [];
   editionMode = false;
 
+  // variables de montos
+  ingreso = 1000000;
+  montoGasto = 0;
+  saldo = 0;
+
   displayedColumns: string[] = ['nombre', 'categoria', 'monto', 'id'];
 
   constructor(private daService: DAService) {}
@@ -20,8 +25,15 @@ export class ConsultarComponent {
   }
   //test
   get_gastos() {
+    let montoTemporal = 0;
     this.daService.get_gastos().subscribe((all_gastos) => {
       this.all_gastos = all_gastos;
+      all_gastos.forEach(function(value){
+        montoTemporal += value.monto;
+      });
+      this.montoGasto = montoTemporal;
+  
+      this.saldo = this.ingreso - this.montoGasto;
     });
   }
 
@@ -33,8 +45,17 @@ export class ConsultarComponent {
   }
 
   delete_gasto(gasto: Gasto) {
+    let montoTemporal = 0;
      this.daService.delete_gasto(gasto).subscribe(() => {
       this.all_gastos = this.all_gastos.filter((c) => c.id !== gasto.id);
+      this.all_gastos.forEach(function(value){
+        montoTemporal += value.monto;
+      });
+      this.montoGasto = montoTemporal;
+  
+      this.saldo = this.ingreso - this.montoGasto;
+
     });
   }
+
 }
