@@ -1,0 +1,7 @@
+.mat-mdc-unelevated-button.mat-primary{
+    --mdc-filled-button-container-color: #5bc0de;
+}
+
+.container {
+    padding: 5%;
+}
