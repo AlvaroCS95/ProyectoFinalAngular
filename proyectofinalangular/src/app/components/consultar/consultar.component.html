@@ -50,4 +50,20 @@
     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
     <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
   </table>
+
+
+
+  <table *ngIf="all_gastos.length > 0" class="table table-bordered">
+    <thead>
+        <th scope="col">Presupuesto</th>
+        <th scope="col">Gastos Totales</th>
+        <th scope="col">Balance</th>
+    </thead>
+   <thead>
+     <td scope="col">{{ingreso}}</td>
+     <td scope="col">{{montoGasto}}</td>
+     <td scope="col">{{saldo}}</td>
+    </thead>
+  </table>
+
 </div>
